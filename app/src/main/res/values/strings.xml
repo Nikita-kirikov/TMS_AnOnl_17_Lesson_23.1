@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TMS_lesson_23</string>
+    <string name="save_news">Save note</string>
+    <string name="Title">Title</string>
+    <string name="Subtitle">Subtitle</string>
+    <string name="Important">Make important?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_addNote"
+        android:name="com.example.tms_lesson_23.Fragments.NoteFragment"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_250dp"
+        android:layout_marginBottom="@dimen/_10dp"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_allNote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_note"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_allNote"
+        android:name="com.example.tms_lesson_23.Fragments.AllNoteFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_addNote"
+        tools:layout="@layout/fragment_all_note"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
