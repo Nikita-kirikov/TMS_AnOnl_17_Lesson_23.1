@@ -65,9 +65,10 @@ class NoteFragment : Fragment() {
                 if (header.text.toString().isEmpty()  && text.text.toString().isEmpty()) {
                     Toast.makeText(context, "Note is empty", Toast.LENGTH_LONG).show()
                 } else {
-                        mainVM.onListChanged("mainVM.header.value.toString()", "mainVM.text.value.toString()",
-                            false
-                        )
+                    mainVM.onListChanged(
+                    mainVM.header.value.toString(), mainVM.text.value.toString(),
+                    false
+                )
                     Toast.makeText(context, "Note has been added", Toast.LENGTH_LONG).show()
                     binding.header.text?.clear()
                     binding.text.text?.clear()

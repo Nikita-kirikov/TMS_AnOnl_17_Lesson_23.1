@@ -1,5 +1,6 @@
 package com.example.tms_lesson_23.ViewModel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,7 +11,7 @@ import com.example.tms_lesson_23.Model.SingletonList
 class MainViewModel : ViewModel() {
 
     private val _notes = MutableLiveData<MutableList<Note>>()
-    val notes : LiveData<List<Note>> = _notes.map { item -> item?.map { it } ?: emptyList() }
+    val notes : LiveData<List<Note>> = _notes.map { item -> item.map { it } }
 
     private val _header : MutableLiveData<String> = MutableLiveData()
     val header : LiveData<String>
@@ -38,7 +39,7 @@ class MainViewModel : ViewModel() {
 
     fun onListChanged(header: String, text: String, important : Boolean) {
         val newNote = Note(header, text, important)
-        val list = _notes.value
+        val list = _notes.value!!
         list.add(newNote)
         _notes.value = list
         SingletonList.addList(newNote)

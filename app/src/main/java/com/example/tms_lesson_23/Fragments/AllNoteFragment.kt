@@ -51,8 +51,9 @@ class AllNoteFragment : Fragment() {
 
     private fun updateList() {
         mainVM.notes.observe(viewLifecycleOwner) {
-            myAdapter.submitList(ArrayList(SingletonList.getList()))
-            myAdapter.notifyItemInserted(myAdapter.itemCount)
+            myAdapter.submitList(it)
+            Log.d("f", it.toString())
+            myAdapter.notifyItemChanged(myAdapter.itemCount)
         }
     }
 }
